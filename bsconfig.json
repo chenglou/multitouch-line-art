@@ -1,11 +1,11 @@
 {
-  "name": "react-lite",
-  "reason": {
-    "react-jsx": 2
-  },
+  "name": "multitouch-line-art",
   "sources": {
     "dir": "src",
     "subdirs": true
+  },
+  "warnings": {
+    "number": "-21"
   },
   "package-specs": [
     {
