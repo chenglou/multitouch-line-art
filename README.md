@@ -10,7 +10,7 @@ This is what you'd be able to draw with **a cursor**:
 
 ![Boooo](https://user-images.githubusercontent.com/1909539/50062299-456e0280-015b-11e9-919e-f77d15cfb5e7.jpeg)
 
-Compare to what you can draw using all your fingers, on **an iPad**:
+Compare to what you can draw using all your fingers, on **an iPad** (click screen shots to see videos):
 
 **Ray**
 
