@@ -32,6 +32,8 @@ Compare to what you can draw using all your fingers, on **an iPad** (click links
 
 [![Lily Pad](https://user-images.githubusercontent.com/1909539/50068315-20d55300-017a-11e9-83bd-65024273e9e6.gif)](https://vimeo.com/306726511)
 
+**Such multitouch drawing environment is to point-and-click environment what piano chords are to single piano keys**. It seems that most of our computer-based creative work is still akin to playing one piano note at time.
+
 # Try locally
 
 ```sh
