@@ -56,54 +56,45 @@ context.fillRect(0, 0, width, height);
 var strokes = /* array */[];
 
 canvas.addEventListener("touchstart", (function (e) {
-        e.preventDefault();
-        strokes.push(/* array */[]);
-        return /* () */0;
-      }));
+  e.preventDefault();
+  strokes.push(/* array */[]);
+  return /* () */0;
+}));
 
 canvas.addEventListener("touchmove", (function (e) {
-        e.preventDefault();
-        context.fillStyle = "white";
-        context.strokeStyle = "white";
-        context.lineWidth = 2;
-        context.globalAlpha = 0.2;
-        Array.from(e.touches).forEach((function (touch) {
-                var point_000 = /* x */touch.clientX;
-                var point_001 = /* y */touch.clientY;
-                var point = /* record */[
-                  point_000,
-                  point_001
-                ];
-                if (strokes.length !== 0) {
-                  var latestStroke = strokes[strokes.length - 1 | 0];
-                  if (latestStroke.length !== 0) {
-                    var prevPoint = latestStroke[latestStroke.length - 1 | 0];
-                    context.beginPath();
-                    context.moveTo(prevPoint[/* x */0], prevPoint[/* y */1]);
-                    context.lineTo(point_000, point_001);
-                    context.stroke();
-                    context.closePath();
-                    latestStroke.push(point);
-                    return /* () */0;
-                  } else {
-                    context.fillRect(point_000, point_001, 2, 2);
-                    latestStroke.push(point);
-                    return /* () */0;
-                  }
-                } else {
-                  context.fillRect(point_000, point_001, 2, 2);
-                  strokes.push(/* array */[point]);
-                  return /* () */0;
-                }
-              }));
+  e.preventDefault();
+  context.fillStyle = "white";
+  context.strokeStyle = "white";
+  context.lineWidth = 2;
+  context.globalAlpha = 0.2;
+  Array.from(e.touches).forEach((function (touch) {
+    var point_000 = /* x */touch.clientX;
+    var point_001 = /* y */touch.clientY;
+    var point = /* record */[
+      point_000,
+      point_001
+    ];
+    if (strokes.length !== 0) {
+      var latestStroke = strokes[strokes.length - 1 | 0];
+      if (latestStroke.length !== 0) {
+        var prevPoint = latestStroke[latestStroke.length - 1 | 0];
+        context.beginPath();
+        context.moveTo(prevPoint[/* x */0], prevPoint[/* y */1]);
+        context.lineTo(point_000, point_001);
+        context.stroke();
+        context.closePath();
+        latestStroke.push(point);
         return /* () */0;
-      }));
-
-exports.$$console = $$console;
-exports.log = log;
-exports.canvas = canvas;
-exports.width = width;
-exports.height = height;
-exports.context = context;
-exports.strokes = strokes;
-/*  Not a pure module */
+      } else {
+        context.fillRect(point_000, point_001, 2, 2);
+        latestStroke.push(point);
+        return /* () */0;
+      }
+    } else {
+      context.fillRect(point_000, point_001, 2, 2);
+      strokes.push(/* array */[point]);
+      return /* () */0;
+    }
+  }));
+  return /* () */0;
+}));
