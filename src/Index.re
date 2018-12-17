@@ -15,9 +15,10 @@ console##style##margin #= "0px";
 console##style##fontFamily #= "-apple-system, BlinkMacSystemFont, sans-serif";
 document##body##appendChild(console);
 
+[@bs.val] [@bs.scope "JSON"] external stringify: 'a => string = "";
 let log = msg => {
   let node = document##createElement("div");
-  node##innerText #= Js.Json.stringifyAny(msg);
+  node##innerText #= stringify(msg);
   ignore(console##prepend(node));
 };
 
@@ -61,13 +62,18 @@ canvas##addEventListener("touchmove", e => {
         context##fillRect(point.x, point.y, lineWidth, lineWidth);
         Js.Array.push([|point|], strokes)->ignore;
       | strokes =>
-        let latestStroke = strokes[Js.Array.length(strokes) - 1];
+        let latestStroke =
+          Belt.Array.getUnsafe(strokes, Js.Array.length(strokes) - 1);
         switch (latestStroke) {
         | [||] =>
           context##fillRect(point.x, point.y, lineWidth, lineWidth);
           Js.Array.push(point, latestStroke)->ignore;
         | latestStroke =>
-          let prevPoint = latestStroke[Js.Array.length(latestStroke) - 1];
+          let prevPoint =
+            Belt.Array.getUnsafe(
+              latestStroke,
+              Js.Array.length(latestStroke) - 1,
+            );
           context##beginPath();
           context##moveTo(prevPoint.x, prevPoint.y);
           context##lineTo(point.x, point.y);
