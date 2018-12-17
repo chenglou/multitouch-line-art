@@ -14,23 +14,23 @@ Compare to what you can draw using all your fingers, on **an iPad** (click links
 
 [**Ray**](https://vimeo.com/306726498)
 
-[![Ray](https://i.vimeocdn.com/video/746530871_780x439.jpg)](https://vimeo.com/306726498)
+[![Ray](https://user-images.githubusercontent.com/1909539/50068313-203cbc80-017a-11e9-93e3-b1b61ef1fbc9.gif)](https://vimeo.com/306726498)
 
 [**Progress**](https://vimeo.com/306726496)
 
-[![Progress](https://i.vimeocdn.com/video/746530859_780x439.jpg)](https://vimeo.com/306726496)
+[![Progress](https://user-images.githubusercontent.com/1909539/50068316-20d55300-017a-11e9-9910-7b82c82bf8c1.gif)](https://vimeo.com/306726496)
 
 [**Passage**](https://vimeo.com/306726485)
 
-[![Passage](https://i.vimeocdn.com/video/746530860_780x439.jpg)](https://vimeo.com/306726485)
+[![Passage](https://user-images.githubusercontent.com/1909539/50068312-203cbc80-017a-11e9-9eb8-90dc7710ad7c.gif)](https://vimeo.com/306726485)
 
 [**Dune**](https://vimeo.com/306726502)
 
-[![Dune](https://i.vimeocdn.com/video/746530879_780x439.jpg)](https://vimeo.com/306726502)
+[![Dune](https://user-images.githubusercontent.com/1909539/50068314-203cbc80-017a-11e9-8203-fc4f1f8ac859.gif)](https://vimeo.com/306726502)
 
 [**Lily Pad**](https://vimeo.com/306726511)
 
-[![Lily Pad](https://i.vimeocdn.com/video/746531442_780x439.jpg)](https://vimeo.com/306726511)
+[![Lily Pad](https://user-images.githubusercontent.com/1909539/50068315-20d55300-017a-11e9-83bd-65024273e9e6.gif)](https://vimeo.com/306726511)
 
 # Try locally
 
