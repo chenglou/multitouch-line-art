@@ -11,14 +11,23 @@ This is what you'd be able to draw with a cursor:
 Compare to what you can draw using all your fingers, on an iPad:
 
 **Ray**
+
 [![Ray](https://i.vimeocdn.com/video/746530871_780x439.jpg)](https://vimeo.com/306726498)
+
 **Progress**
+
 [![Progress](https://i.vimeocdn.com/video/746530859_780x439.jpg)](https://vimeo.com/306726496)
+
 **Passage**
+
 [![Passage](https://i.vimeocdn.com/video/746530860_780x439.jpg)](https://vimeo.com/306726485)
+
 **Dune**
+
 [![Dune](https://i.vimeocdn.com/video/746530879_780x439.jpg)](https://vimeo.com/306726502)
+
 **Lily Pad**
+
 [![Lily Pad](https://i.vimeocdn.com/video/746531442_780x439.jpg)](https://vimeo.com/306726511)
 
 # Try locally
