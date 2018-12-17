@@ -2,13 +2,15 @@
 
 Experiment in drawing with all the fingers.
 
+[Try it here!](https://chenglou.github.io/multitouch-line-art/)
+
 Multitouch devices unlock a level expressivity hard to achieve in traditional point-and-click mediums such as the mouse.
 
-This is what you'd be able to draw with a cursor:
+This is what you'd be able to draw with **a cursor**:
 
 ![Boooo](https://user-images.githubusercontent.com/1909539/50062299-456e0280-015b-11e9-919e-f77d15cfb5e7.jpeg)
 
-Compare to what you can draw using all your fingers, on an iPad:
+Compare to what you can draw using all your fingers, on **an iPad**:
 
 **Ray**
 
