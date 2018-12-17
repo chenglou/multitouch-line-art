@@ -1,3 +1,5 @@
+[@bs.config {no_export: no_export}];
+
 [@bs.val] external document: 'a = "";
 [@bs.val] external window: 'a = "";
 
@@ -38,51 +40,68 @@ type point = {
   y: int,
 };
 let strokes: array(array('a)) = [||];
+let touching = ref(false);
 
-canvas##addEventListener("touchstart", e => {
+let start = e => {
   e##preventDefault();
   Js.Array.push([||], strokes)->ignore;
-});
+  touching := true;
+};
+canvas##addEventListener("touchstart", start);
+canvas##addEventListener("mousedown", start);
 
-[@bs.set] external setLength: (array('a), int) => unit = "length";
-
-canvas##addEventListener("touchmove", e => {
+let stop = e => {
   e##preventDefault();
+  touching := false;
+};
+canvas##addEventListener("touchend", stop);
+canvas##addEventListener("mouseup", stop);
+
+let move = touches => {
   let lineWidth = 2;
   context##fillStyle #= "white";
   context##strokeStyle #= "white";
   context##lineWidth #= lineWidth;
   context##globalAlpha #= 0.2;
-
-  Js.Array.forEach(
-    touch => {
-      let point = {x: touch##clientX, y: touch##clientY};
-      switch (strokes) {
-      | [||] =>
-        context##fillRect(point.x, point.y, lineWidth, lineWidth);
-        Js.Array.push([|point|], strokes)->ignore;
-      | strokes =>
-        let latestStroke =
-          Belt.Array.getUnsafe(strokes, Js.Array.length(strokes) - 1);
-        switch (latestStroke) {
+  if (touching^) {
+    Js.Array.forEach(
+      touch => {
+        let point = {x: touch##clientX, y: touch##clientY};
+        switch (strokes) {
         | [||] =>
           context##fillRect(point.x, point.y, lineWidth, lineWidth);
-          Js.Array.push(point, latestStroke)->ignore;
-        | latestStroke =>
-          let prevPoint =
-            Belt.Array.getUnsafe(
-              latestStroke,
-              Js.Array.length(latestStroke) - 1,
-            );
-          context##beginPath();
-          context##moveTo(prevPoint.x, prevPoint.y);
-          context##lineTo(point.x, point.y);
-          context##stroke();
-          context##closePath();
-          Js.Array.push(point, latestStroke)->ignore;
+          Js.Array.push([|point|], strokes)->ignore;
+        | strokes =>
+          let latestStroke =
+            Belt.Array.getUnsafe(strokes, Js.Array.length(strokes) - 1);
+          switch (latestStroke) {
+          | [||] =>
+            context##fillRect(point.x, point.y, lineWidth, lineWidth);
+            Js.Array.push(point, latestStroke)->ignore;
+          | latestStroke =>
+            let prevPoint =
+              Belt.Array.getUnsafe(
+                latestStroke,
+                Js.Array.length(latestStroke) - 1,
+              );
+            context##beginPath();
+            context##moveTo(prevPoint.x, prevPoint.y);
+            context##lineTo(point.x, point.y);
+            context##stroke();
+            context##closePath();
+            Js.Array.push(point, latestStroke)->ignore;
+          };
         };
-      };
-    },
-    Js.Array.from(e##touches),
-  );
+      },
+      touches,
+    );
+  };
+};
+canvas##addEventListener("touchmove", e => {
+  e##preventDefault();
+  move(Js.Array.from(e##touches));
+});
+canvas##addEventListener("mousemove", e => {
+  e##preventDefault();
+  move([|e|]);
 });

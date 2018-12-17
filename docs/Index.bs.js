@@ -55,46 +55,78 @@ context.fillRect(0, 0, width, height);
 
 var strokes = /* array */[];
 
-canvas.addEventListener("touchstart", (function (e) {
+var touching = /* record */[/* contents */false];
+
+function start(e) {
   e.preventDefault();
   strokes.push(/* array */[]);
+  touching[0] = true;
   return /* () */0;
-}));
+}
 
-canvas.addEventListener("touchmove", (function (e) {
+canvas.addEventListener("touchstart", start);
+
+canvas.addEventListener("mousedown", start);
+
+function stop(e) {
   e.preventDefault();
+  touching[0] = false;
+  return /* () */0;
+}
+
+canvas.addEventListener("touchend", stop);
+
+canvas.addEventListener("mouseup", stop);
+
+function move(touches) {
   context.fillStyle = "white";
   context.strokeStyle = "white";
   context.lineWidth = 2;
   context.globalAlpha = 0.2;
-  Array.from(e.touches).forEach((function (touch) {
-    var point_000 = /* x */touch.clientX;
-    var point_001 = /* y */touch.clientY;
-    var point = /* record */[
-      point_000,
-      point_001
-    ];
-    if (strokes.length !== 0) {
-      var latestStroke = strokes[strokes.length - 1 | 0];
-      if (latestStroke.length !== 0) {
-        var prevPoint = latestStroke[latestStroke.length - 1 | 0];
-        context.beginPath();
-        context.moveTo(prevPoint[/* x */0], prevPoint[/* y */1]);
-        context.lineTo(point_000, point_001);
-        context.stroke();
-        context.closePath();
-        latestStroke.push(point);
-        return /* () */0;
-      } else {
-        context.fillRect(point_000, point_001, 2, 2);
-        latestStroke.push(point);
-        return /* () */0;
-      }
-    } else {
-      context.fillRect(point_000, point_001, 2, 2);
-      strokes.push(/* array */[point]);
-      return /* () */0;
-    }
-  }));
-  return /* () */0;
-}));
+  if (touching[0]) {
+    touches.forEach((function (touch) {
+            var point_000 = /* x */touch.clientX;
+            var point_001 = /* y */touch.clientY;
+            var point = /* record */[
+              point_000,
+              point_001
+            ];
+            if (strokes.length !== 0) {
+              var latestStroke = strokes[strokes.length - 1 | 0];
+              if (latestStroke.length !== 0) {
+                var prevPoint = latestStroke[latestStroke.length - 1 | 0];
+                context.beginPath();
+                context.moveTo(prevPoint[/* x */0], prevPoint[/* y */1]);
+                context.lineTo(point_000, point_001);
+                context.stroke();
+                context.closePath();
+                latestStroke.push(point);
+                return /* () */0;
+              } else {
+                context.fillRect(point_000, point_001, 2, 2);
+                latestStroke.push(point);
+                return /* () */0;
+              }
+            } else {
+              context.fillRect(point_000, point_001, 2, 2);
+              strokes.push(/* array */[point]);
+              return /* () */0;
+            }
+          }));
+    return /* () */0;
+  } else {
+    return 0;
+  }
+}
+
+canvas.addEventListener("touchmove", (function (e) {
+        e.preventDefault();
+        return move(Array.from(e.touches));
+      }));
+
+canvas.addEventListener("mousemove", (function (e) {
+        e.preventDefault();
+        return move(/* array */[e]);
+      }));
+
+/*  Not a pure module */
