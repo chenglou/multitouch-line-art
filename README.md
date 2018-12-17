@@ -10,25 +10,25 @@ This is what you'd be able to draw with **a cursor**:
 
 ![Boooo](https://user-images.githubusercontent.com/1909539/50062299-456e0280-015b-11e9-919e-f77d15cfb5e7.jpeg)
 
-Compare to what you can draw using all your fingers, on **an iPad** (click screen shots to see videos):
+Compare to what you can draw using all your fingers, on **an iPad** (click links to see videos):
 
-**Ray**
+[**Ray**](https://vimeo.com/306726498)
 
 [![Ray](https://i.vimeocdn.com/video/746530871_780x439.jpg)](https://vimeo.com/306726498)
 
-**Progress**
+[**Progress**](https://vimeo.com/306726496)
 
 [![Progress](https://i.vimeocdn.com/video/746530859_780x439.jpg)](https://vimeo.com/306726496)
 
-**Passage**
+[**Passage**](https://vimeo.com/306726485)
 
 [![Passage](https://i.vimeocdn.com/video/746530860_780x439.jpg)](https://vimeo.com/306726485)
 
-**Dune**
+[**Dune**](https://vimeo.com/306726502)
 
 [![Dune](https://i.vimeocdn.com/video/746530879_780x439.jpg)](https://vimeo.com/306726502)
 
-**Lily Pad**
+[**Lily Pad**](https://vimeo.com/306726511)
 
 [![Lily Pad](https://i.vimeocdn.com/video/746531442_780x439.jpg)](https://vimeo.com/306726511)
 
