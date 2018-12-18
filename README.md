@@ -22,7 +22,7 @@ Compare to what you can draw using all your fingers, on **an iPad** (click links
 
 [**Passage**](https://vimeo.com/306726485)
 
-[![Passage](https://user-images.githubusercontent.com/1909539/50068312-203cbc80-017a-11e9-9eb8-90dc7710ad7c.gif)](https://vimeo.com/306726485)
+[![Passage](https://user-images.githubusercontent.com/1909539/50144982-5145eb80-0265-11e9-8241-2e2d212404f5.gif)](https://vimeo.com/306726485)
 
 [**Dune**](https://vimeo.com/306726502)
 
